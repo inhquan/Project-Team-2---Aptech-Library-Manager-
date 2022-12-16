@@ -41,9 +41,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    Book(int aInt, String string, String string0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public int getBookID() {
         return bookID;
