@@ -27,6 +27,70 @@ public class Borrow {
         this.Status = Status;
     }
 
+    public int getBorrowId() {
+        return BorrowId;
+    }
+
+    public void setBorrowId(int BorrowId) {
+        this.BorrowId = BorrowId;
+    }
+
+    public int getBookId() {
+        return BookId;
+    }
+
+    public void setBookId(int BookId) {
+        this.BookId = BookId;
+    }
+
+    public int getReaderId() {
+        return ReaderId;
+    }
+
+    public void setReaderId(int ReaderId) {
+        this.ReaderId = ReaderId;
+    }
+
+    public int getBorrowNo() {
+        return BorrowNo;
+    }
+
+    public void setBorrowNo(int BorrowNo) {
+        this.BorrowNo = BorrowNo;
+    }
+
+    public String getBorrowDate() {
+        return BorrowDate;
+    }
+
+    public void setBorrowDate(String BorrowDate) {
+        this.BorrowDate = BorrowDate;
+    }
+
+    public String getBookReturnAppointmentDate() {
+        return BookReturnAppointmentDate;
+    }
+
+    public void setBookReturnAppointmentDate(String BookReturnAppointmentDate) {
+        this.BookReturnAppointmentDate = BookReturnAppointmentDate;
+    }
+
+    public String getBookReturnDate() {
+        return BookReturnDate;
+    }
+
+    public void setBookReturnDate(String BookReturnDate) {
+        this.BookReturnDate = BookReturnDate;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+
     
     
 }
