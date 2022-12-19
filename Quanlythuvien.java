@@ -7,8 +7,6 @@ package javaapplication17;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,7 +17,7 @@ public class Quanlythuvien extends javax.swing.JFrame {
     DefaultTableModel tableModel;
     List<Book> bookList = new ArrayList<>();
     /**
-     * Creates new form Quanlythuvien
+     * Creates new form 
      */
     public Quanlythuvien() {
         initComponents();
@@ -243,6 +241,12 @@ public class Quanlythuvien extends javax.swing.JFrame {
         }
 
         jLabel10.setText("Mã sách:");
+
+        BookID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookIDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -474,15 +478,10 @@ public class Quanlythuvien extends javax.swing.JFrame {
         String author =Author.getText();
         String publisher =Publisher.getText();
         
-        if(bookName.isEmpty()){
-            JOptionPane.showMessageDialog(rootPane, "bookName is empty");
-            return;
-        } 
-       
         Book book =new Book(bookID, bookName, pageNo, language, price, amount, publishYear, type, author, publisher);
-        bookList.add(book);
         
-        tableModel.addRow(new Object[] {bookID, bookName, pageNo, language, price, amount, publishYear, type, author, publisher});
+        BookModify.insert(book);
+        showBook();
     }//GEN-LAST:event_AddBookActionPerformed
 
     private void DeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBookActionPerformed
@@ -503,6 +502,10 @@ public class Quanlythuvien extends javax.swing.JFrame {
         Author.setText("");
         Publisher.setText("");
     }//GEN-LAST:event_ResetActionPerformed
+
+    private void BookIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookIDActionPerformed
 
     /**
      * @param args the command line arguments

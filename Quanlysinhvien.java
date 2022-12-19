@@ -4,18 +4,22 @@
  */
 package javaapplication17;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Admin
  */
 public class Quanlysinhvien extends javax.swing.JFrame {
+    DefaultTableModel tableModel;
 
     /**
      * Creates new form Quanlysinhvien
      */
     public Quanlysinhvien() {
         initComponents();
-      
+        
+    
     }
 
     /**
@@ -44,7 +48,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jToggleButton5 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblStudent = new javax.swing.JTable();
         button1 = new java.awt.Button();
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
@@ -94,7 +98,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblStudent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -107,7 +111,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
                 "Mã Độc Giả", "Họ Và Tên ", "CCCD", "SĐT", "Ngày Cấp Thẻ", "Chức Vụ"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblStudent);
 
         button1.setBackground(new java.awt.Color(0, 204, 204));
         button1.setLabel("Quản lý sách");
@@ -342,7 +346,6 @@ public class Quanlysinhvien extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -353,5 +356,6 @@ public class Quanlysinhvien extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private java.awt.Panel panel1;
+    private javax.swing.JTable tblStudent;
     // End of variables declaration//GEN-END:variables
 }

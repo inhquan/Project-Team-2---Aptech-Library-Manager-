@@ -548,6 +548,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="BookID">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BookIDActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
