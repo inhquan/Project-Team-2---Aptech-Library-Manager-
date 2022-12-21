@@ -7,6 +7,7 @@ package javaapplication17;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,16 +25,24 @@ public class Quanlythuvien extends javax.swing.JFrame {
         
         tableModel = (DefaultTableModel) tblBook .getModel();
         showBook();
+
     }
 
     private void showBook(){
-        List<Book> bookList = BookModify.findAll();
+        bookList = BookModify.findAll();
         
         tableModel.setRowCount(0);
         bookList.forEach((book) -> {
-            tableModel.addRow(new Object [] {tableModel.getRowCount() + 
-                    1,book.getBookID(),book.getBookName(),book.getPageNo(),book.getLanguage(),book.getPrice(),
-                    book.getAmount(),book.getPublishYear(),book.getType(),book.getAuthor(),book.getPublisher()});
+            tableModel.addRow(new Object [] {tableModel.getRowCount() + 1,
+                book.getBookName(),
+                book.getPageNo(),
+                book.getPrice(),
+                book.getAmount(),
+                book.getPublishYear(),
+                book.getLanguage(),
+                book.getType(),
+                book.getAuthor(),
+                book.getPublisher()});
         });
     }
     /**
@@ -78,8 +87,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
         button9 = new java.awt.Button();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblBook = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
-        BookID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -224,7 +231,7 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã sách", "Tên sách", "Số trang", "Ngôn ngữ", "Giá trị", "Số lượng còn", "Năm sản xuấtl", "Thể loại", "Tác giả", "Nhà xuất bản"
+                "Mã sách", "Tên sách", "Số trang", "Giá trị", "Số lượng", "Năm sản xuất", "Ngôn ngữ", "Thể loại", "Tác giả", "Nhà xuất bản"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -236,17 +243,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(tblBook);
-        if (tblBook.getColumnModel().getColumnCount() > 0) {
-            tblBook.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        jLabel10.setText("Mã sách:");
-
-        BookID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BookIDActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -312,12 +308,7 @@ public class Quanlythuvien extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(BookID))
-                            .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 790, Short.MAX_VALUE))
@@ -330,11 +321,7 @@ public class Quanlythuvien extends javax.swing.JFrame {
                     .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BookName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
@@ -467,18 +454,18 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
     private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
         // TODO add your handling code here:
-        int bookID = Integer.parseInt(BookID.getText());
+        
         String bookName = BookName.getText();
         int pageNo =Integer.parseInt( PageNo.getText());
-        String language = Language.getText();
         int price = Integer.parseInt(Price.getText());
-        String amount =Amount.getText();
+        int amount =Integer.parseInt(Amount.getText()) ;
         int publishYear =Integer.parseInt(PublishYear.getSelectedItem().toString());
+        String language = Language.getText();
         String type =Type.getSelectedItem().toString();
         String author =Author.getText();
         String publisher =Publisher.getText();
         
-        Book book =new Book(bookID, bookName, pageNo, language, price, amount, publishYear, type, author, publisher);
+        Book book = new Book(bookName, pageNo, price, amount, publishYear, language, type, author, publisher);
         
         BookModify.insert(book);
         showBook();
@@ -486,12 +473,24 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
     private void DeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBookActionPerformed
         // TODO add your handling code here:
-        
+        int selectedIndex = tblBook.getSelectedRow();
+        if(selectedIndex >=0){
+            Book book = bookList.get(selectedIndex);
+            
+            int option =JOptionPane.showConfirmDialog(this,"Do you want to delete this item?");
+            System.out.println("option :" +option);
+            
+            if(option == 0){
+                BookModify.delete(book.getBookID());
+                
+                showBook();
+            }
+        }
     }//GEN-LAST:event_DeleteBookActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         // TODO add your handling code here:
-        BookID.setText("");
+       
         BookName.setText("");
         PageNo.setText("");
         Language.setText("");
@@ -502,10 +501,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
         Author.setText("");
         Publisher.setText("");
     }//GEN-LAST:event_ResetActionPerformed
-
-    private void BookIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BookIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -549,7 +544,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private java.awt.Button AddBook;
     private javax.swing.JTextField Amount;
     private javax.swing.JTextField Author;
-    private javax.swing.JTextField BookID;
     private javax.swing.JTextField BookName;
     private java.awt.Button DeleteBook;
     private javax.swing.JTextField Language;
@@ -568,7 +562,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -10,38 +10,39 @@ package javaapplication17;
  * @author student
  */
 public class Book {
-    private int bookID,pageNo,price,publishYear;
-    private String bookName,language,amount,type,author,publisher;
+    private int bookID;
+    private String bookName;
+    private int pageNo,price,amount,publishYear;
+    private String language,type,author,publisher;
 
     public Book() {
     }
 
-    public Book(int bookID, String bookName, int pageNo, String language, int price, String amount, int publishYear, String type, String author, String publisher) {
+    public Book(int bookID, String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.pageNo = pageNo;
-        this.language = language;
         this.price = price;
         this.amount = amount;
         this.publishYear = publishYear;
+        this.language = language;
         this.type = type;
         this.author = author;
         this.publisher = publisher;
     }
 
-    public Book(String bookName, int pageNo, String language, int price, String amount, int publishYear, String type, String author, String publisher) {
+    public Book(String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
         this.bookName = bookName;
         this.pageNo = pageNo;
-        this.language = language;
         this.price = price;
         this.amount = amount;
         this.publishYear = publishYear;
+        this.language = language;
         this.type = type;
         this.author = author;
         this.publisher = publisher;
     }
 
-    
 
     public int getBookID() {
         return bookID;
@@ -67,14 +68,6 @@ public class Book {
         this.pageNo = pageNo;
     }
 
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -83,11 +76,11 @@ public class Book {
         this.price = price;
     }
 
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -97,6 +90,14 @@ public class Book {
 
     public void setPublishYear(int publishYear) {
         this.publishYear = publishYear;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public String getType() {

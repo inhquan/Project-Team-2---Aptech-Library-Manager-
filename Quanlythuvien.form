@@ -118,14 +118,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="button6" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="BookID" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="button7" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="button7" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="button8" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
@@ -143,12 +136,7 @@
                       <Component id="button7" min="-2" max="-2" attributes="0"/>
                       <Component id="button8" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel10" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="BookID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BookName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -472,10 +460,10 @@
                     <Column editable="false" title="M&#xe3; s&#xe1;ch" type="java.lang.Object"/>
                     <Column editable="false" title="T&#xea;n s&#xe1;ch" type="java.lang.Object"/>
                     <Column editable="false" title="S&#x1ed1; trang" type="java.lang.Object"/>
-                    <Column editable="false" title="Ng&#xf4;n ng&#x1eef;" type="java.lang.Object"/>
                     <Column editable="false" title="Gi&#xe1; tr&#x1ecb;" type="java.lang.Object"/>
-                    <Column editable="false" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng c&#xf2;n" type="java.lang.Object"/>
-                    <Column editable="false" title="N&#x103;m s&#x1ea3;n xu&#x1ea5;tl" type="java.lang.Object"/>
+                    <Column editable="false" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
+                    <Column editable="false" title="N&#x103;m s&#x1ea3;n xu&#x1ea5;t" type="java.lang.Object"/>
+                    <Column editable="false" title="Ng&#xf4;n ng&#x1eef;" type="java.lang.Object"/>
                     <Column editable="false" title="Th&#x1ec3; lo&#x1ea1;i" type="java.lang.Object"/>
                     <Column editable="false" title="T&#xe1;c gi&#x1ea3;" type="java.lang.Object"/>
                     <Column editable="false" title="Nh&#xe0; xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
@@ -498,7 +486,7 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -542,16 +530,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3; s&#xe1;ch:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="BookID">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BookIDActionPerformed"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
