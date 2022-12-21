@@ -474,15 +474,14 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private void DeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBookActionPerformed
         // TODO add your handling code here:
         int selectedIndex = tblBook.getSelectedRow();
-        if(selectedIndex >=0){
+        if(selectedIndex >= 0){
             Book book = bookList.get(selectedIndex);
             
             int option =JOptionPane.showConfirmDialog(this,"Do you want to delete this item?");
-            System.out.println("option :" +option);
+            System.out.println("option:" + option);
             
             if(option == 0){
                 BookModify.delete(book.getBookID());
-                
                 showBook();
             }
         }

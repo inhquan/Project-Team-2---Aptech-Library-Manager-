@@ -160,39 +160,36 @@ public class BookModify {
     }
     
         public static void delete(int id){
-       Connection connection = null;
-        PreparedStatement statement = null;
-        
-        try {
-            //lay tat ca danh sach sinh vien
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
-            
-            //query
-            String sql = "delete from student where id = ?";
-            statement = connection.prepareCall(sql);
-            
-            statement.setInt(1, id);
-            
-            statement.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if(statement != null) {
+            Connection connection = null;
+            PreparedStatement statement = null;
+         try {
+             connection = DriverManager.getConnection("jdbs:mysql://localhost:3306?library_c2109i","root","");
+             
+             String sql="delete from book where id =?";
+             statement = connection.prepareCall(sql);
+             
+             statement.setInt(1, id);
+             
+             statement.execute();
+         } catch (SQLException ex) {
+             Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
+         
+        }finally{
+            if(statement !=null){
                 try {
                     statement.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            
-            if (connection != null) {
+            if(connection != null){
                 try {
                     connection.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }
-        //ket thuc
-    }
+}
+        
+}
 }
