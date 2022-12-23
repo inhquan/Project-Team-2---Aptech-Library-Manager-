@@ -83,6 +83,7 @@ public class BookModify {
             String sql ="insert into book(bookName,pageNo,price,amount,publishYear,language,type,author,publisher) values(?,?,?,?,?,?,?,?,?)";
             statement = connection.prepareCall(sql);
             
+            
             statement.setString(1,book.getBookName());
             statement.setInt(2,book.getPageNo());
             statement.setInt(3,book.getPrice());
@@ -123,7 +124,7 @@ public class BookModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="update book set bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=?";
+            String sql ="update book set bookID=?,bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=?";
             statement = connection.prepareCall(sql);
             
             statement.setString(1,book.getBookName());
@@ -159,18 +160,21 @@ public class BookModify {
         //ket thuc
     }
     
-        public static void delete(int id){
+        public static void delete(int bookID){
             Connection connection = null;
             PreparedStatement statement = null;
          try {
-             connection = DriverManager.getConnection("jdbs:mysql://localhost:3306?library_c2109i","root","");
+             //lays danh sách
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");             
              
-             String sql="delete from book where id =?";
+             String sql="delete from book where bookID =?";
+             
              statement = connection.prepareCall(sql);
-             
-             statement.setInt(1, id);
-             
+            
+             statement.setInt(1,bookID);
+            
              statement.execute();
+             
          } catch (SQLException ex) {
              Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
          
@@ -189,7 +193,55 @@ public class BookModify {
                     Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-}
+    }   
         
 }
+        public static List<Book> findByBookName(String bookName){
+            List<Book> bookList = new ArrayList<>();
+            Connection connection = null;
+            PreparedStatement statement = null;
+            
+         try {             
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
+            String sql ="select * from book where bookName like ?";
+            statement = connection.prepareCall(sql);
+            statement.setString(1, "%"+bookName+"%");
+            ResultSet resultSet = statement.executeQuery();
+            
+            while(resultSet.next()){
+                Book book = new Book(
+                        resultSet.getInt("bookID"),
+                        resultSet.getString("bookName"),
+                        resultSet.getInt("pageNo"),
+                        resultSet.getInt("price"),
+                        resultSet.getInt("amount"),
+                        resultSet.getInt("publishYear"),
+                        resultSet.getString("language"),
+                        resultSet.getString("type"),
+                        resultSet.getString("author"),
+                        resultSet.getString("publisher")
+                );
+                bookList.add(book);
+            }
+            
+         } catch (SQLException ex) {
+             Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
+         }finally{
+            if(statement !=null){
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(connection != null){
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BookModify.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } 
+        }
+        return bookList;
+   }
 }

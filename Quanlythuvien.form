@@ -102,10 +102,8 @@
                                   <Component id="Update" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="Reset" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" min="-2" pref="381" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                  <Component id="button9" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="Search" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -114,13 +112,13 @@
                           <Component id="jScrollPane2" min="-2" pref="1424" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="button5" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="qltv" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="button6" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="qlsv" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="button7" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="qlms" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="button8" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="tk" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="790" max="32767" attributes="0"/>
@@ -131,10 +129,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="button5" min="-2" max="-2" attributes="0"/>
-                      <Component id="button6" min="-2" max="-2" attributes="0"/>
-                      <Component id="button7" min="-2" max="-2" attributes="0"/>
-                      <Component id="button8" min="-2" max="-2" attributes="0"/>
+                      <Component id="qltv" min="-2" max="-2" attributes="0"/>
+                      <Component id="qlsv" min="-2" max="-2" attributes="0"/>
+                      <Component id="qlms" min="-2" max="-2" attributes="0"/>
+                      <Component id="tk" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -173,15 +171,21 @@
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="AddBook" min="-2" max="-2" attributes="0"/>
-                      <Component id="DeleteBook" min="-2" max="-2" attributes="0"/>
-                      <Component id="Update" min="-2" max="-2" attributes="0"/>
-                      <Component id="Reset" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
-                      <Component id="button9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="AddBook" min="-2" max="-2" attributes="0"/>
+                              <Component id="DeleteBook" min="-2" max="-2" attributes="0"/>
+                              <Component id="Update" min="-2" max="-2" attributes="0"/>
+                              <Component id="Reset" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="402" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Search" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="402" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -328,7 +332,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="java.awt.Button" name="button5">
+        <Component class="java.awt.Button" name="qltv">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -336,18 +340,21 @@
             <Property name="label" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; s&#xe1;ch"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qltvActionPerformed"/>
           </Events>
         </Component>
-        <Component class="java.awt.Button" name="button6">
+        <Component class="java.awt.Button" name="qlsv">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
             </Property>
             <Property name="label" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; sinh vi&#xea;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qlsvActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="java.awt.Button" name="button7">
+        <Component class="java.awt.Button" name="qlms">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -355,10 +362,10 @@
             <Property name="label" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; m&#x1b0;&#x1ee3;n s&#xe1;ch"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qlmsActionPerformed"/>
           </Events>
         </Component>
-        <Component class="java.awt.Button" name="button8">
+        <Component class="java.awt.Button" name="tk">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -366,7 +373,7 @@
             <Property name="label" type="java.lang.String" value="Th&#x1ed1;ng K&#xea;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tkActionPerformed"/>
           </Events>
         </Component>
         <Component class="java.awt.Button" name="AddBook">
@@ -436,15 +443,16 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
-        </Component>
-        <Component class="java.awt.Button" name="button9">
+        <Component class="java.awt.Button" name="Search">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="0" type="rgb"/>
             </Property>
             <Property name="label" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>

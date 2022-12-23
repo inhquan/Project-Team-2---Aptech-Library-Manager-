@@ -73,18 +73,17 @@ public class Quanlythuvien extends javax.swing.JFrame {
         Publisher = new javax.swing.JTextField();
         Type = new javax.swing.JComboBox<>();
         PublishYear = new javax.swing.JComboBox<>();
-        button5 = new java.awt.Button();
-        button6 = new java.awt.Button();
-        button7 = new java.awt.Button();
-        button8 = new java.awt.Button();
+        qltv = new java.awt.Button();
+        qlsv = new java.awt.Button();
+        qlms = new java.awt.Button();
+        tk = new java.awt.Button();
         AddBook = new java.awt.Button();
         DeleteBook = new java.awt.Button();
         Update = new java.awt.Button();
         Reset = new java.awt.Button();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField6 = new javax.swing.JTextField();
-        button9 = new java.awt.Button();
+        Search = new java.awt.Button();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblBook = new javax.swing.JTable();
 
@@ -159,30 +158,35 @@ public class Quanlythuvien extends javax.swing.JFrame {
             }
         });
 
-        button5.setBackground(new java.awt.Color(0, 204, 204));
-        button5.setLabel("Quản lý sách");
-        button5.addActionListener(new java.awt.event.ActionListener() {
+        qltv.setBackground(new java.awt.Color(0, 204, 204));
+        qltv.setLabel("Quản lý sách");
+        qltv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button5ActionPerformed(evt);
+                qltvActionPerformed(evt);
             }
         });
 
-        button6.setBackground(new java.awt.Color(0, 204, 204));
-        button6.setLabel("Quản lý sinh viên");
-
-        button7.setBackground(new java.awt.Color(0, 204, 204));
-        button7.setLabel("Quản lý mượn sách");
-        button7.addActionListener(new java.awt.event.ActionListener() {
+        qlsv.setBackground(new java.awt.Color(0, 204, 204));
+        qlsv.setLabel("Quản lý sinh viên");
+        qlsv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button7ActionPerformed(evt);
+                qlsvActionPerformed(evt);
             }
         });
 
-        button8.setBackground(new java.awt.Color(0, 204, 204));
-        button8.setLabel("Thống Kê");
-        button8.addActionListener(new java.awt.event.ActionListener() {
+        qlms.setBackground(new java.awt.Color(0, 204, 204));
+        qlms.setLabel("Quản lý mượn sách");
+        qlms.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button8ActionPerformed(evt);
+                qlmsActionPerformed(evt);
+            }
+        });
+
+        tk.setBackground(new java.awt.Color(0, 204, 204));
+        tk.setLabel("Thống Kê");
+        tk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tkActionPerformed(evt);
             }
         });
 
@@ -223,8 +227,13 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất Cả", "Tên Sách", "Tác Giả", "Ngôn Ngữ ", "Năm Xuất Bản", "Thể Loại", "NXB" }));
 
-        button9.setBackground(new java.awt.Color(0, 255, 255));
-        button9.setLabel("Tìm Kiếm");
+        Search.setBackground(new java.awt.Color(0, 255, 255));
+        Search.setLabel("Tìm Kiếm");
+        Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchActionPerformed(evt);
+            }
+        });
 
         tblBook.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -296,31 +305,29 @@ public class Quanlythuvien extends javax.swing.JFrame {
                                 .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
                                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(274, 274, 274)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(55, 55, 55)
+                                .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1424, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qltv, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qlsv, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qlms, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tk, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 790, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(qltv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qlsv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qlms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BookName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,14 +360,17 @@ public class Quanlythuvien extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(33, 33, 33)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeleteBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -415,15 +425,14 @@ public class Quanlythuvien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+    private void qlmsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qlmsActionPerformed
         Quanlymuonsach qlms = new Quanlymuonsach();
         qlms.setVisible(true);
         qlms.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_button7ActionPerformed
+    }//GEN-LAST:event_qlmsActionPerformed
 
     private void qlsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qlsvActionPerformed
-
         Quanlysinhvien qlsv = new Quanlysinhvien();
         qlsv.setVisible(true);
         qlsv.setLocationRelativeTo(null);
@@ -434,19 +443,19 @@ public class Quanlythuvien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
-    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+    private void qltvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qltvActionPerformed
         Quanlythuvien qltv = new Quanlythuvien();
         qltv.setVisible(true);
         qltv.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_button5ActionPerformed
+    }//GEN-LAST:event_qltvActionPerformed
 
-    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+    private void tkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tkActionPerformed
         ThongKe tk = new ThongKe();
         tk.setVisible(true);
         tk.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_button8ActionPerformed
+    }//GEN-LAST:event_tkActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         // TODO add your handling code here:
@@ -454,7 +463,7 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
     private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
         // TODO add your handling code here:
-        
+       
         String bookName = BookName.getText();
         int pageNo =Integer.parseInt( PageNo.getText());
         int price = Integer.parseInt(Price.getText());
@@ -500,6 +509,31 @@ public class Quanlythuvien extends javax.swing.JFrame {
         Author.setText("");
         Publisher.setText("");
     }//GEN-LAST:event_ResetActionPerformed
+
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        // TODO add your handling code here:
+        String input = JOptionPane.showInputDialog(this,"Enter full name to search");
+        if(input != null && input.length() >0){
+            bookList = BookModify.findByBookName(input);
+            
+            tableModel.setRowCount(0);
+            
+            bookList.forEach((book) -> {
+                tableModel.addRow(new Object [] {tableModel.getRowCount() + 1,
+                    book.getBookName(),
+                    book.getPageNo(),
+                    book.getPrice(),
+                    book.getAmount(),
+                    book.getPublishYear(),
+                    book.getLanguage(),
+                    book.getType(),
+                    book.getAuthor(),
+                    book.getPublisher()});
+            });
+        }else{
+            showBook();
+        }
+    }//GEN-LAST:event_SearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -551,13 +585,9 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> PublishYear;
     private javax.swing.JTextField Publisher;
     private java.awt.Button Reset;
+    private java.awt.Button Search;
     private javax.swing.JComboBox<String> Type;
     private java.awt.Button Update;
-    private java.awt.Button button5;
-    private java.awt.Button button6;
-    private java.awt.Button button7;
-    private java.awt.Button button8;
-    private java.awt.Button button9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
@@ -570,8 +600,11 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField6;
     private java.awt.Panel panel1;
+    private java.awt.Button qlms;
+    private java.awt.Button qlsv;
+    private java.awt.Button qltv;
     private javax.swing.JTable tblBook;
+    private java.awt.Button tk;
     // End of variables declaration//GEN-END:variables
 }

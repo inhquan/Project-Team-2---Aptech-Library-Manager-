@@ -27,11 +27,11 @@ public class Quanlymuonsach extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        AddBorrowBook = new javax.swing.JToggleButton();
         button4 = new java.awt.Button();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        returnBook = new javax.swing.JToggleButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        Reset = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
         jTextField4 = new javax.swing.JTextField();
         jToggleButton7 = new javax.swing.JToggleButton();
@@ -43,11 +43,11 @@ public class Quanlymuonsach extends javax.swing.JFrame {
         button2 = new java.awt.Button();
         jLabel3 = new javax.swing.JLabel();
         button3 = new java.awt.Button();
-        jTextField1 = new javax.swing.JTextField();
+        ReaderId = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        checkReaderId = new javax.swing.JToggleButton();
+        checkBookId = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,11 +62,11 @@ public class Quanlymuonsach extends javax.swing.JFrame {
             .addGap(0, 721, Short.MAX_VALUE)
         );
 
-        jToggleButton3.setBackground(new java.awt.Color(153, 255, 255));
-        jToggleButton3.setText("Mượn Sách");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        AddBorrowBook.setBackground(new java.awt.Color(153, 255, 255));
+        AddBorrowBook.setText("Mượn Sách");
+        AddBorrowBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                AddBorrowBookActionPerformed(evt);
             }
         });
 
@@ -78,11 +78,11 @@ public class Quanlymuonsach extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton4.setBackground(new java.awt.Color(153, 255, 255));
-        jToggleButton4.setText("Trả Sách");
+        returnBook.setBackground(new java.awt.Color(153, 255, 255));
+        returnBook.setText("Trả Sách");
 
-        jToggleButton5.setBackground(new java.awt.Color(153, 255, 255));
-        jToggleButton5.setText("Nhập Lại");
+        Reset.setBackground(new java.awt.Color(153, 255, 255));
+        Reset.setText("Nhập Lại");
 
         jToggleButton6.setBackground(new java.awt.Color(153, 255, 255));
         jToggleButton6.setText("DS Phạt");
@@ -133,11 +133,16 @@ public class Quanlymuonsach extends javax.swing.JFrame {
         button3.setBackground(new java.awt.Color(0, 204, 204));
         button3.setLabel("Quản lý mượn sách");
 
-        jToggleButton1.setBackground(new java.awt.Color(153, 255, 255));
-        jToggleButton1.setText("Kiểm Tra");
+        checkReaderId.setBackground(new java.awt.Color(153, 255, 255));
+        checkReaderId.setText("Kiểm Tra");
+        checkReaderId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkReaderIdActionPerformed(evt);
+            }
+        });
 
-        jToggleButton2.setBackground(new java.awt.Color(153, 255, 255));
-        jToggleButton2.setText("Kiểm Tra");
+        checkBookId.setBackground(new java.awt.Color(153, 255, 255));
+        checkBookId.setText("Kiểm Tra");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,13 +158,13 @@ public class Quanlymuonsach extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AddBorrowBook, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(returnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(46, 46, 46)
-                                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(242, 242, 242)
@@ -175,15 +180,15 @@ public class Quanlymuonsach extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ReaderId, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkBookId, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkReaderId, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1390, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -207,13 +212,13 @@ public class Quanlymuonsach extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1))
+                    .addComponent(ReaderId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkReaderId))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2))
+                    .addComponent(checkBookId))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -222,9 +227,9 @@ public class Quanlymuonsach extends javax.swing.JFrame {
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton3)
-                    .addComponent(jToggleButton4)
-                    .addComponent(jToggleButton5))
+                    .addComponent(AddBorrowBook)
+                    .addComponent(returnBook)
+                    .addComponent(Reset))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton6)
@@ -240,9 +245,10 @@ public class Quanlymuonsach extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void AddBorrowBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBorrowBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+        
+    }//GEN-LAST:event_AddBorrowBookActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         Quanlythuvien qltv = new Quanlythuvien();
@@ -264,6 +270,12 @@ public class Quanlymuonsach extends javax.swing.JFrame {
         tk.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_button4ActionPerformed
+
+    private void checkReaderIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkReaderIdActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_checkReaderIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,10 +311,15 @@ public class Quanlymuonsach extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton AddBorrowBook;
+    private javax.swing.JTextField ReaderId;
+    private javax.swing.JToggleButton Reset;
     private java.awt.Button button1;
     private java.awt.Button button2;
     private java.awt.Button button3;
     private java.awt.Button button4;
+    private javax.swing.JToggleButton checkBookId;
+    private javax.swing.JToggleButton checkReaderId;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -310,16 +327,11 @@ public class Quanlymuonsach extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToggleButton returnBook;
     // End of variables declaration//GEN-END:variables
 }

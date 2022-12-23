@@ -43,7 +43,6 @@ public class Book {
         this.publisher = publisher;
     }
 
-
     public int getBookID() {
         return bookID;
     }
