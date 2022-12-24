@@ -5,8 +5,11 @@
 package javaapplication17;
 
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
+import static javaapplication17.BookModify.findAll;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
 public class Quanlythuvien extends javax.swing.JFrame {
     DefaultTableModel tableModel;
     List<Book> bookList = new ArrayList<>();
+    int currentIndex=-1;
     /**
      * Creates new form 
      */
@@ -25,7 +29,43 @@ public class Quanlythuvien extends javax.swing.JFrame {
         
         tableModel = (DefaultTableModel) tblBook .getModel();
         showBook();
+        tblBook.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                currentIndex = tblBook.getSelectedRow();
+                Book book = bookList.get(tblBook.getSelectedRow());
+                BookName.setText(book.getBookName());
+                PageNo.setText(book.getPageNo());
+                Price.setText(book.getPrice());
+                Amount.setText(book.getAmount());
+                PublishYear.setSelectedItem(book.getPublishYear());
+                Language.setText(book.getLanguage());
+                Type.setSelectedItem(book.getType());
+                Author.setText(book.getAuthor());
+                Publisher.setText(book.getPublisher());
+                
+            }
+            
 
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
+        bookList = BookModify.findAll();
+        showBook();
+    
     }
 
     private void showBook(){
@@ -33,7 +73,8 @@ public class Quanlythuvien extends javax.swing.JFrame {
         
         tableModel.setRowCount(0);
         bookList.forEach((book) -> {
-            tableModel.addRow(new Object [] {tableModel.getRowCount() + 1,
+            tableModel.addRow(new Object [] {tableModel.getRowCount() + 
+                1,
                 book.getBookName(),
                 book.getPageNo(),
                 book.getPrice(),
@@ -251,6 +292,14 @@ public class Quanlythuvien extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBookMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBookMouseEntered(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblBook);
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -459,16 +508,42 @@ public class Quanlythuvien extends javax.swing.JFrame {
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         // TODO add your handling code here:
+        String bookName = BookName.getText();
+        String pageNo = PageNo.getText();
+        String price = Price.getText();
+        String amount =Amount.getText() ;
+        String publishYear =PublishYear.getSelectedItem().toString();
+        String language = Language.getText();
+        String type =Type.getSelectedItem().toString();
+        String author =Author.getText();
+        String publisher =Publisher.getText();
+        
+        if(currentIndex >=0){
+            bookList.get(currentIndex).setBookName(bookName);
+            bookList.get(currentIndex).setPageNo(pageNo);
+            bookList.get(currentIndex).setPrice(price);
+            bookList.get(currentIndex).setAmount(amount);
+            bookList.get(currentIndex).setPublishYear(publishYear);
+            bookList.get(currentIndex).setLanguage(language);
+            bookList.get(currentIndex).setType(type);
+            bookList.get(currentIndex).setAuthor(author);
+            bookList.get(currentIndex).setPublisher(publisher);
+            BookModify.update(bookList.get(currentIndex));
+            showBook();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Not edit");
+        }
+    	
     }//GEN-LAST:event_UpdateActionPerformed
 
     private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
         // TODO add your handling code here:
        
         String bookName = BookName.getText();
-        int pageNo =Integer.parseInt( PageNo.getText());
-        int price = Integer.parseInt(Price.getText());
-        int amount =Integer.parseInt(Amount.getText()) ;
-        int publishYear =Integer.parseInt(PublishYear.getSelectedItem().toString());
+        String pageNo = PageNo.getText();
+        String price = Price.getText();
+        String amount =Amount.getText() ;
+        String publishYear =PublishYear.getSelectedItem().toString();
         String language = Language.getText();
         String type =Type.getSelectedItem().toString();
         String author =Author.getText();
@@ -534,6 +609,16 @@ public class Quanlythuvien extends javax.swing.JFrame {
             showBook();
         }
     }//GEN-LAST:event_SearchActionPerformed
+
+    private void tblBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBookMouseClicked
+        // TODO add your handling code here:
+
+       
+    }//GEN-LAST:event_tblBookMouseClicked
+
+    private void tblBookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBookMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBookMouseEntered
 
     /**
      * @param args the command line arguments

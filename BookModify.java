@@ -37,12 +37,12 @@ public class BookModify {
             
             while(resultSet.next()){
                 Book book = new Book(
-                        resultSet.getInt("bookID"),
+                        resultSet.getString("bookID"),
                         resultSet.getString("bookName"),
-                        resultSet.getInt("pageNo"),
-                        resultSet.getInt("price"),
-                        resultSet.getInt("amount"),
-                        resultSet.getInt("publishYear"),
+                        resultSet.getString("pageNo"),
+                        resultSet.getString("price"),
+                        resultSet.getString("amount"),
+                        resultSet.getString("publishYear"),
                         resultSet.getString("language"),
                         resultSet.getString("type"),
                         resultSet.getString("author"),
@@ -85,10 +85,10 @@ public class BookModify {
             
             
             statement.setString(1,book.getBookName());
-            statement.setInt(2,book.getPageNo());
-            statement.setInt(3,book.getPrice());
-            statement.setInt(4,book.getAmount());
-            statement.setInt(5,book.getPublishYear());
+            statement.setString(2,book.getPageNo());
+            statement.setString(3,book.getPrice());
+            statement.setString(4,book.getAmount());
+            statement.setString(5,book.getPublishYear());
             statement.setString(6,book.getLanguage());
             statement.setString(7,book.getType());
             statement.setString(8,book.getAuthor());
@@ -124,18 +124,19 @@ public class BookModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="update book set bookID=?,bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=?";
-            statement = connection.prepareCall(sql);
+            String sql ="update book set bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=? where bookID=?";
+            statement = connection.prepareStatement(sql);
             
             statement.setString(1,book.getBookName());
-            statement.setInt(2,book.getPageNo());
-            statement.setInt(3,book.getPrice());
-            statement.setInt(4,book.getAmount());
-            statement.setInt(5,book.getPublishYear());
+            statement.setString(2,book.getPageNo());
+            statement.setString(3,book.getPrice());
+            statement.setString(4,book.getAmount());
+            statement.setString(5,book.getPublishYear());
             statement.setString(6,book.getLanguage());
             statement.setString(7,book.getType());
             statement.setString(8,book.getAuthor());
             statement.setString(9,book.getPublisher());
+            statement.setString(10,book.getBookID());
             
             statement.execute();
             
@@ -160,7 +161,7 @@ public class BookModify {
         //ket thuc
     }
     
-        public static void delete(int bookID){
+        public static void delete(String bookID){
             Connection connection = null;
             PreparedStatement statement = null;
          try {
@@ -171,7 +172,7 @@ public class BookModify {
              
              statement = connection.prepareCall(sql);
             
-             statement.setInt(1,bookID);
+             statement.setString(1,bookID);
             
              statement.execute();
              
@@ -210,12 +211,12 @@ public class BookModify {
             
             while(resultSet.next()){
                 Book book = new Book(
-                        resultSet.getInt("bookID"),
+                        resultSet.getString("bookID"),
                         resultSet.getString("bookName"),
-                        resultSet.getInt("pageNo"),
-                        resultSet.getInt("price"),
-                        resultSet.getInt("amount"),
-                        resultSet.getInt("publishYear"),
+                        resultSet.getString("pageNo"),
+                        resultSet.getString("price"),
+                        resultSet.getString("amount"),
+                        resultSet.getString("publishYear"),
                         resultSet.getString("language"),
                         resultSet.getString("type"),
                         resultSet.getString("author"),
@@ -244,4 +245,5 @@ public class BookModify {
         }
         return bookList;
    }
+        
 }

@@ -10,15 +10,15 @@ package javaapplication17;
  * @author student
  */
 public class Book {
-    private int bookID;
+    private String bookID;
     private String bookName;
-    private int pageNo,price,amount,publishYear;
+    private String pageNo,price,amount,publishYear;
     private String language,type,author,publisher;
 
     public Book() {
     }
 
-    public Book(int bookID, String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
+    public Book(String bookID, String bookName, String pageNo, String price, String amount, String publishYear, String language, String type, String author, String publisher) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.pageNo = pageNo;
@@ -31,7 +31,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Book(String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
+    public Book(String bookName, String pageNo, String price, String amount, String publishYear, String language, String type, String author, String publisher) {
         this.bookName = bookName;
         this.pageNo = pageNo;
         this.price = price;
@@ -43,11 +43,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public int getBookID() {
+    public String getBookID() {
         return bookID;
     }
 
-    public void setBookID(int bookID) {
+    public void setBookID(String bookID) {
         this.bookID = bookID;
     }
 
@@ -59,35 +59,35 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public int getPageNo() {
+    public String getPageNo() {
         return pageNo;
     }
 
-    public void setPageNo(int pageNo) {
+    public void setPageNo(String pageNo) {
         this.pageNo = pageNo;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
-    public int getPublishYear() {
+    public String getPublishYear() {
         return publishYear;
     }
 
-    public void setPublishYear(int publishYear) {
+    public void setPublishYear(String publishYear) {
         this.publishYear = publishYear;
     }
 
@@ -122,6 +122,9 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+
+    
 
     
 }
