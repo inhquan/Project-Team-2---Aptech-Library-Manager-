@@ -10,29 +10,31 @@ package javaapplication17;
  * @author student
  */
 public class Borrow {
-    private int BorrowId,bookID,ReaderId,BorrowNo;
-    private String BorrowDate,BookReturnAppointmentDate,BookReturnDate,Status;
+    private int borrowId,bookID,readerId,borrowNo;
+    private String borrowDate,bookReturnAppointmentDate,bookReturnDate;
+    private String status;
 
     public Borrow() {
+        
     }
 
-    public Borrow(int BorrowId, int bookID, int ReaderId, int BorrowNo, String BorrowDate, String BookReturnAppointmentDate, String BookReturnDate, String Status) {
-        this.BorrowId = BorrowId;
+    public Borrow(int borrowId, int bookID, int readerId, int borrowNo, String borrowDate, String bookReturnAppointmentDate, String bookReturnDate, String status) {
+        this.borrowId = borrowId;
         this.bookID = bookID;
-        this.ReaderId = ReaderId;
-        this.BorrowNo = BorrowNo;
-        this.BorrowDate = BorrowDate;
-        this.BookReturnAppointmentDate = BookReturnAppointmentDate;
-        this.BookReturnDate = BookReturnDate;
-        this.Status = Status;
+        this.readerId = readerId;
+        this.borrowNo = borrowNo;
+        this.borrowDate = borrowDate;
+        this.bookReturnAppointmentDate = bookReturnAppointmentDate;
+        this.bookReturnDate = bookReturnDate;
+        this.status = status;
     }
 
-    public int getBorrowId() {
-        return BorrowId;
+    public int getborrowId() {
+        return borrowId;
     }
 
-    public void setBorrowId(int BorrowId) {
-        this.BorrowId = BorrowId;
+    public void setborrowId(int borrowId) {
+        this.borrowId = borrowId;
     }
 
     public int getbookID() {
@@ -43,54 +45,55 @@ public class Borrow {
         this.bookID = bookID;
     }
 
-    public int getReaderId() {
-        return ReaderId;
+    public int getreaderId() {
+        return readerId;
     }
 
-    public void setReaderId(int ReaderId) {
-        this.ReaderId = ReaderId;
+    public void setreaderId(int readerId) {
+        this.readerId = readerId;
     }
 
-    public int getBorrowNo() {
-        return BorrowNo;
+    public int getborrowNo() {
+        return borrowNo;
     }
 
-    public void setBorrowNo(int BorrowNo) {
-        this.BorrowNo = BorrowNo;
+    public void setborrowNo(int borrowNo) {
+        this.borrowNo = borrowNo;
     }
 
-    public String getBorrowDate() {
-        return BorrowDate;
+    public String getborrowDate() {
+        return borrowDate;
     }
 
-    public void setBorrowDate(String BorrowDate) {
-        this.BorrowDate = BorrowDate;
+    public void setborrowDate(String borrowDate) {
+        this.borrowDate = borrowDate;
     }
 
-    public String getBookReturnAppointmentDate() {
-        return BookReturnAppointmentDate;
+    public String getbookReturnAppointmentDate() {
+        return bookReturnAppointmentDate;
     }
 
-    public void setBookReturnAppointmentDate(String BookReturnAppointmentDate) {
-        this.BookReturnAppointmentDate = BookReturnAppointmentDate;
+    public void setbookReturnAppointmentDate(String bookReturnAppointmentDate) {
+        this.bookReturnAppointmentDate = bookReturnAppointmentDate;
     }
 
-    public String getBookReturnDate() {
-        return BookReturnDate;
+    public String getbookReturnDate() {
+        return bookReturnDate;
     }
 
-    public void setBookReturnDate(String BookReturnDate) {
-        this.BookReturnDate = BookReturnDate;
+    public void setbookReturnDate(String bookReturnDate) {
+        this.bookReturnDate = bookReturnDate;
     }
 
-    public String getStatus() {
-        return Status;
+    public String getstatus() {
+        return status;
     }
 
-    public void setStatus(String Status) {
-        this.Status = Status;
+    public void setstatus(String status) {
+        this.status = status;
     }
 
+    
     
     
 }

@@ -30,23 +30,22 @@ public class BorrowModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="select * from book";
+            String sql = "select * from borrow";
+           
             statement = connection.createStatement();
-            
             
             ResultSet resultSet = statement.executeQuery(sql);
             
-            
             while(resultSet.next()){
                 Borrow borrow= new Borrow(
-                        resultSet.getInt("BorrowId"),
+                        resultSet.getInt("borrowId"),
                         resultSet.getInt("bookID"),
-                        resultSet.getInt("ReaderId"), 
-                        resultSet.getInt("BorrowNo"),
-                        resultSet.getString("BorrowDate"),
-                        resultSet.getString("BookReturnAppointmentDate"),
-                        resultSet.getString("BookReturnDate"),
-                        resultSet.getString("Status")  
+                        resultSet.getInt("readerId"), 
+                        resultSet.getInt("borrowNo"), 
+                        resultSet.getString("borrowDate"),
+                        resultSet.getString("bookReturnAppointmentDate"),
+                        resultSet.getString("bookReturnDate"),
+                        resultSet.getString("status")  
                 );
                 borrowList.add(borrow);
                         
@@ -80,17 +79,16 @@ public class BorrowModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="insert into borrow(BorrowId,bookID,ReaderId,BorrowNo,BorrowDate,BookReturnAppointmentDate,BookReturnDat,Status) value(?,?,?,?,?,?,?,?)";
+            String sql ="insert into borrow(borrowId,bookID,readerId,borrowNo,borrowDate,bookReturnAppointmentDate,bookReturnDat,status) value(?,?,?,?,?,?,?,?)";
             statement = connection.prepareCall(sql);
-            
-            statement.setInt(1,borrow.getBorrowId());
+            statement.setInt(1,borrow.getborrowId());
             statement.setInt(2,borrow.getbookID());
-            statement.setInt(3,borrow.getReaderId());
-            statement.setInt(4,borrow.getBorrowNo());
-            statement.setString(5,borrow.getBorrowDate());
-            statement.setString(6,borrow.getBookReturnAppointmentDate());
-            statement.setString(7,borrow.getBookReturnDate());
-            statement.setString(8,borrow.getStatus());
+            statement.setInt(3,borrow.getreaderId());
+            statement.setInt(4,borrow.getborrowNo());
+            statement.setString(5,borrow.getborrowDate());
+            statement.setString(6,borrow.getbookReturnAppointmentDate());
+            statement.setString(7,borrow.getbookReturnDate());
+            statement.setString(8,borrow.getstatus());
             
             statement.execute();
             
@@ -115,80 +113,7 @@ public class BorrowModify {
         //ket thuc
     }
     
-    public static void update(Borrow borrow){
-        Connection connection = null;
-        PreparedStatement statement = null;
-        try {
-            //lấy tất cả danh sách
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
-            //query
-            String sql ="update book set BorrowID=?,bookID=?,ReaderId=?,BorrowNo=?,BorrowDate=?,BookReturnAppointmentDate=?,BookReturnDate=?,Status=?";
-            statement = connection.prepareCall(sql);
-            
-            statement.setInt(1,borrow.getBorrowId());
-            statement.setInt(2,borrow.getbookID());
-            statement.setInt(3,borrow.getReaderId());
-            statement.setInt(4,borrow.getBorrowNo());
-            statement.setString(5,borrow.getBorrowDate());
-            statement.setString(6,borrow.getBookReturnAppointmentDate());
-            statement.setString(7,borrow.getBookReturnDate());
-            statement.setString(8,borrow.getStatus());
-            
-            statement.execute();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if(statement != null){
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        //ket thuc
-    }
+
     
-        public static void delete(int id){
-        Connection connection = null;
-        PreparedStatement statement = null;
-        try {
-            //lấy tất cả danh sách
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
-            //query
-            String sql ="delete from book where id=?";
-            statement = connection.prepareCall(sql);
-            
-            statement.setInt(1,id);
-            
-            statement.execute();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if(statement != null){
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(BorrowModify.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        //ket thuc
-    }
+
 }

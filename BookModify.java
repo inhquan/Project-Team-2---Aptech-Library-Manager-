@@ -82,19 +82,18 @@ public class BookModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="insert into book(bookName,pageNo,price,amount,publishYear,language,type,author,publisher) values(?,?,?,?,?,?,?,?,?)";
+            String sql ="insert into book(bookID,bookName,pageNo,price,amount,publishYear,language,type,author,publisher) values(?,?,?,?,?,?,?,?,?,?)";
             statement = connection.prepareCall(sql);
-            
-            
-            statement.setString(1,book.getBookName());
-            statement.setInt(2,book.getPageNo());
-            statement.setInt(3,book.getPrice());
-            statement.setInt(4,book.getAmount());
-            statement.setInt(5,book.getPublishYear());
-            statement.setString(6,book.getLanguage());
-            statement.setString(7,book.getType());
-            statement.setString(8,book.getAuthor());
-            statement.setString(9,book.getPublisher());
+            statement.setInt(1, book.getBookID());
+            statement.setString(2,book.getBookName());
+            statement.setInt(3,book.getPageNo());
+            statement.setInt(4,book.getPrice());
+            statement.setInt(5,book.getAmount());
+            statement.setInt(6,book.getPublishYear());
+            statement.setString(7,book.getLanguage());
+            statement.setString(8,book.getType());
+            statement.setString(9,book.getAuthor());
+            statement.setString(10,book.getPublisher());
             
             statement.execute();
             
@@ -126,19 +125,20 @@ public class BookModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="update book set bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=? where bookID=?";
+            String sql ="update book set bookID =?,bookName=?,pageNo=?,language=?,price=?,amount=?,publishYear=?,type=?,author=?,publisher=? where bookID=?";
             statement = connection.prepareStatement(sql);
             
-            statement.setString(1,book.getBookName());
-            statement.setInt(2,book.getPageNo());
-            statement.setInt(3,book.getPrice());
-            statement.setInt(4,book.getAmount());
-            statement.setInt(5,book.getPublishYear());
-            statement.setString(6,book.getLanguage());
-            statement.setString(7,book.getType());
-            statement.setString(8,book.getAuthor());
-            statement.setString(9,book.getPublisher());
-            statement.setInt(10,book.getBookID());
+            statement = connection.prepareCall(sql);
+            statement.setInt(1, book.getBookID());
+            statement.setString(2,book.getBookName());
+            statement.setInt(3,book.getPageNo());
+            statement.setInt(4,book.getPrice());
+            statement.setInt(5,book.getAmount());
+            statement.setInt(6,book.getPublishYear());
+            statement.setString(7,book.getLanguage());
+            statement.setString(8,book.getType());
+            statement.setString(9,book.getAuthor());
+            statement.setString(10,book.getPublisher());
             
             statement.execute();
             
