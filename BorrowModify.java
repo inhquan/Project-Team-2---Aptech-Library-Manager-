@@ -40,7 +40,7 @@ public class BorrowModify {
             while(resultSet.next()){
                 Borrow borrow= new Borrow(
                         resultSet.getInt("BorrowId"),
-                        resultSet.getInt("BookId"),
+                        resultSet.getInt("bookID"),
                         resultSet.getInt("ReaderId"), 
                         resultSet.getInt("BorrowNo"),
                         resultSet.getString("BorrowDate"),
@@ -80,11 +80,11 @@ public class BorrowModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="insert into borrow(BorrowId,BookId,ReaderId,BorrowNo,BorrowDate,BookReturnAppointmentDate,BookReturnDat,Status) value(?,?,?,?,?,?,?,?)";
+            String sql ="insert into borrow(BorrowId,bookID,ReaderId,BorrowNo,BorrowDate,BookReturnAppointmentDate,BookReturnDat,Status) value(?,?,?,?,?,?,?,?)";
             statement = connection.prepareCall(sql);
             
             statement.setInt(1,borrow.getBorrowId());
-            statement.setInt(2,borrow.getBookId());
+            statement.setInt(2,borrow.getbookID());
             statement.setInt(3,borrow.getReaderId());
             statement.setInt(4,borrow.getBorrowNo());
             statement.setString(5,borrow.getBorrowDate());
@@ -122,11 +122,11 @@ public class BorrowModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="update book set BorrowID=?,BookId=?,ReaderId=?,BorrowNo=?,BorrowDate=?,BookReturnAppointmentDate=?,BookReturnDate=?,Status=?";
+            String sql ="update book set BorrowID=?,bookID=?,ReaderId=?,BorrowNo=?,BorrowDate=?,BookReturnAppointmentDate=?,BookReturnDate=?,Status=?";
             statement = connection.prepareCall(sql);
             
             statement.setInt(1,borrow.getBorrowId());
-            statement.setInt(2,borrow.getBookId());
+            statement.setInt(2,borrow.getbookID());
             statement.setInt(3,borrow.getReaderId());
             statement.setInt(4,borrow.getBorrowNo());
             statement.setString(5,borrow.getBorrowDate());

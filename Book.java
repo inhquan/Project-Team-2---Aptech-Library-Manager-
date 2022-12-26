@@ -10,15 +10,15 @@ package javaapplication17;
  * @author student
  */
 public class Book {
-    private String bookID;
+    private int bookID;
     private String bookName;
-    private String pageNo,price,amount,publishYear;
+    private int pageNo,price,amount,publishYear;
     private String language,type,author,publisher;
 
     public Book() {
     }
 
-    public Book(String bookID, String bookName, String pageNo, String price, String amount, String publishYear, String language, String type, String author, String publisher) {
+    public Book(int bookID, String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
         this.bookID = bookID;
         this.bookName = bookName;
         this.pageNo = pageNo;
@@ -31,7 +31,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Book(String bookName, String pageNo, String price, String amount, String publishYear, String language, String type, String author, String publisher) {
+    public Book(String bookName, int pageNo, int price, int amount, int publishYear, String language, String type, String author, String publisher) {
         this.bookName = bookName;
         this.pageNo = pageNo;
         this.price = price;
@@ -43,11 +43,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public String getBookID() {
+    public int getBookID() {
         return bookID;
     }
 
-    public void setBookID(String bookID) {
+    public void setBookID(int bookID) {
         this.bookID = bookID;
     }
 
@@ -59,35 +59,35 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getPageNo() {
+    public int getPageNo() {
         return pageNo;
     }
 
-    public void setPageNo(String pageNo) {
+    public void setPageNo(int pageNo) {
         this.pageNo = pageNo;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public String getPublishYear() {
+    public int getPublishYear() {
         return publishYear;
     }
 
-    public void setPublishYear(String publishYear) {
+    public void setPublishYear(int publishYear) {
         this.publishYear = publishYear;
     }
 
@@ -122,6 +122,8 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    
 
 
     

@@ -35,9 +35,9 @@ public class Quanlythuvien extends javax.swing.JFrame {
                 currentIndex = tblBook.getSelectedRow();
                 Book book = bookList.get(tblBook.getSelectedRow());
                 BookName.setText(book.getBookName());
-                PageNo.setText(book.getPageNo());
-                Price.setText(book.getPrice());
-                Amount.setText(book.getAmount());
+                PageNo.setText(String.valueOf(book.getPageNo()));
+                Price.setText(String.valueOf(book.getPrice()));
+                Amount.setText(String.valueOf(book.getAmount()));
                 PublishYear.setSelectedItem(book.getPublishYear());
                 Language.setText(book.getLanguage());
                 Type.setSelectedItem(book.getType());
@@ -122,8 +122,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
         DeleteBook = new java.awt.Button();
         Update = new java.awt.Button();
         Reset = new java.awt.Button();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
         Search = new java.awt.Button();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblBook = new javax.swing.JTable();
@@ -259,15 +257,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp Xếp", "Tăng Dần Theo Số Trang ", "Giảm Dần Theo Số Trang" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất Cả", "Tên Sách", "Tác Giả", "Ngôn Ngữ ", "Năm Xuất Bản", "Thể Loại", "NXB" }));
-
         Search.setBackground(new java.awt.Color(0, 255, 255));
         Search.setLabel("Tìm Kiếm");
         Search.addActionListener(new java.awt.event.ActionListener() {
@@ -339,14 +328,8 @@ public class Quanlythuvien extends javax.swing.JFrame {
                                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(PublishYear, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(Publisher, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(102, 102, 102)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(102, 102, 102)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(Publisher, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(DeleteBook, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,7 +338,8 @@ public class Quanlythuvien extends javax.swing.JFrame {
                                 .addGap(46, 46, 46)
                                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(55, 55, 55)
-                                .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(260, 260, 260))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1424, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -394,15 +378,13 @@ public class Quanlythuvien extends javax.swing.JFrame {
                     .addComponent(Language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel8)
-                    .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel9)
-                    .addComponent(Publisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Publisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -470,10 +452,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PublisherActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void qlmsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qlmsActionPerformed
         Quanlymuonsach qlms = new Quanlymuonsach();
         qlms.setVisible(true);
@@ -509,10 +487,10 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         // TODO add your handling code here:
         String bookName = BookName.getText();
-        String pageNo = PageNo.getText();
-        String price = Price.getText();
-        String amount =Amount.getText() ;
-        String publishYear =PublishYear.getSelectedItem().toString();
+        int pageNo = Integer.parseInt(PageNo.getText());
+        int price = Integer.parseInt(Price.getText());
+        int amount =Integer.parseInt(Amount.getText());
+        int publishYear =Integer.parseInt(PublishYear.getSelectedItem().toString());
         String language = Language.getText();
         String type =Type.getSelectedItem().toString();
         String author =Author.getText();
@@ -540,10 +518,10 @@ public class Quanlythuvien extends javax.swing.JFrame {
         // TODO add your handling code here:
        
         String bookName = BookName.getText();
-        String pageNo = PageNo.getText();
-        String price = Price.getText();
-        String amount =Amount.getText() ;
-        String publishYear =PublishYear.getSelectedItem().toString();
+        int pageNo = Integer.parseInt(PageNo.getText());
+        int price = Integer.parseInt(Price.getText());
+        int amount =Integer.parseInt(Amount.getText()) ;
+        int publishYear =Integer.parseInt(PublishYear.getSelectedItem().toString());
         String language = Language.getText();
         String type =Type.getSelectedItem().toString();
         String author =Author.getText();
@@ -673,8 +651,6 @@ public class Quanlythuvien extends javax.swing.JFrame {
     private java.awt.Button Search;
     private javax.swing.JComboBox<String> Type;
     private java.awt.Button Update;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

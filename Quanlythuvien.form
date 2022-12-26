@@ -83,16 +83,8 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="PublishYear" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
                                       <Component id="Type" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Publisher" min="-2" pref="205" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                          <Component id="jComboBox4" min="-2" pref="110" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Author" min="-2" pref="205" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                          <Component id="jComboBox1" min="-2" pref="158" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="Publisher" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="Author" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -106,6 +98,7 @@
                                   <Component id="Search" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -154,7 +147,6 @@
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Author" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -162,7 +154,6 @@
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Publisher" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -407,41 +398,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="S&#x1eaf;p X&#x1ebf;p"/>
-                <StringItem index="1" value="T&#x103;ng D&#x1ea7;n Theo S&#x1ed1; Trang "/>
-                <StringItem index="2" value="Gi&#x1ea3;m D&#x1ea7;n Theo S&#x1ed1; Trang"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox4">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="T&#x1ea5;t C&#x1ea3;"/>
-                <StringItem index="1" value="T&#xea;n S&#xe1;ch"/>
-                <StringItem index="2" value="T&#xe1;c Gi&#x1ea3;"/>
-                <StringItem index="3" value="Ng&#xf4;n Ng&#x1eef; "/>
-                <StringItem index="4" value="N&#x103;m Xu&#x1ea5;t B&#x1ea3;n"/>
-                <StringItem index="5" value="Th&#x1ec3; Lo&#x1ea1;i"/>
-                <StringItem index="6" value="NXB"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="java.awt.Button" name="Search">
           <Properties>

@@ -4,22 +4,18 @@
  */
 package javaapplication17;
 
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Admin
  */
 public class Quanlysinhvien extends javax.swing.JFrame {
-    DefaultTableModel tableModel;
 
     /**
      * Creates new form Quanlysinhvien
      */
     public Quanlysinhvien() {
         initComponents();
-        
-    
+      
     }
 
     /**
@@ -48,7 +44,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jToggleButton5 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblStudent = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         button1 = new java.awt.Button();
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
@@ -85,6 +81,11 @@ public class Quanlysinhvien extends javax.swing.JFrame {
 
         jToggleButton3.setBackground(new java.awt.Color(0, 255, 255));
         jToggleButton3.setText("Xóa Độc Giả");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         jToggleButton4.setBackground(new java.awt.Color(0, 255, 255));
         jToggleButton4.setText("Nhập Lại");
@@ -98,7 +99,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
             }
         });
 
-        tblStudent.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -111,7 +112,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
                 "Mã Độc Giả", "Họ Và Tên ", "CCCD", "SĐT", "Ngày Cấp Thẻ", "Chức Vụ"
             }
         ));
-        jScrollPane1.setViewportView(tblStudent);
+        jScrollPane1.setViewportView(jTable1);
 
         button1.setBackground(new java.awt.Color(0, 204, 204));
         button1.setLabel("Quản lý sách");
@@ -261,10 +262,11 @@ public class Quanlysinhvien extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        Strn
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        Quanlythuvien qltv = new Quanlythuvien();
+       Quanlythuvien qltv = new Quanlythuvien();
         qltv.setVisible(true);
         qltv.setLocationRelativeTo(null);
         this.dispose();
@@ -294,6 +296,10 @@ public class Quanlysinhvien extends javax.swing.JFrame {
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton5ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,6 +352,7 @@ public class Quanlysinhvien extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -356,6 +363,5 @@ public class Quanlysinhvien extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private java.awt.Panel panel1;
-    private javax.swing.JTable tblStudent;
     // End of variables declaration//GEN-END:variables
 }

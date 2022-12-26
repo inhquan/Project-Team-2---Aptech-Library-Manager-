@@ -26,23 +26,25 @@ public class BookModify {
         List<Book> bookList = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
+        
         try {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="select * from book";
+            String sql ="select * from book order by bookName asc";
+            
             statement = connection.createStatement();
             
             ResultSet resultSet = statement.executeQuery(sql);
             
             while(resultSet.next()){
                 Book book = new Book(
-                        resultSet.getString("bookID"),
+                        resultSet.getInt("bookID"),
                         resultSet.getString("bookName"),
-                        resultSet.getString("pageNo"),
-                        resultSet.getString("price"),
-                        resultSet.getString("amount"),
-                        resultSet.getString("publishYear"),
+                        resultSet.getInt("pageNo"),
+                        resultSet.getInt("price"),
+                        resultSet.getInt("amount"),
+                        resultSet.getInt("publishYear"),
                         resultSet.getString("language"),
                         resultSet.getString("type"),
                         resultSet.getString("author"),
@@ -85,10 +87,10 @@ public class BookModify {
             
             
             statement.setString(1,book.getBookName());
-            statement.setString(2,book.getPageNo());
-            statement.setString(3,book.getPrice());
-            statement.setString(4,book.getAmount());
-            statement.setString(5,book.getPublishYear());
+            statement.setInt(2,book.getPageNo());
+            statement.setInt(3,book.getPrice());
+            statement.setInt(4,book.getAmount());
+            statement.setInt(5,book.getPublishYear());
             statement.setString(6,book.getLanguage());
             statement.setString(7,book.getType());
             statement.setString(8,book.getAuthor());
@@ -128,15 +130,15 @@ public class BookModify {
             statement = connection.prepareStatement(sql);
             
             statement.setString(1,book.getBookName());
-            statement.setString(2,book.getPageNo());
-            statement.setString(3,book.getPrice());
-            statement.setString(4,book.getAmount());
-            statement.setString(5,book.getPublishYear());
+            statement.setInt(2,book.getPageNo());
+            statement.setInt(3,book.getPrice());
+            statement.setInt(4,book.getAmount());
+            statement.setInt(5,book.getPublishYear());
             statement.setString(6,book.getLanguage());
             statement.setString(7,book.getType());
             statement.setString(8,book.getAuthor());
             statement.setString(9,book.getPublisher());
-            statement.setString(10,book.getBookID());
+            statement.setInt(10,book.getBookID());
             
             statement.execute();
             
@@ -161,7 +163,7 @@ public class BookModify {
         //ket thuc
     }
     
-        public static void delete(String bookID){
+        public static void delete(int bookID){
             Connection connection = null;
             PreparedStatement statement = null;
          try {
@@ -172,7 +174,7 @@ public class BookModify {
              
              statement = connection.prepareCall(sql);
             
-             statement.setString(1,bookID);
+             statement.setInt(1,bookID);
             
              statement.execute();
              
@@ -211,12 +213,12 @@ public class BookModify {
             
             while(resultSet.next()){
                 Book book = new Book(
-                        resultSet.getString("bookID"),
+                        resultSet.getInt("bookID"),
                         resultSet.getString("bookName"),
-                        resultSet.getString("pageNo"),
-                        resultSet.getString("price"),
-                        resultSet.getString("amount"),
-                        resultSet.getString("publishYear"),
+                        resultSet.getInt("pageNo"),
+                        resultSet.getInt("price"),
+                        resultSet.getInt("amount"),
+                        resultSet.getInt("publishYear"),
                         resultSet.getString("language"),
                         resultSet.getString("type"),
                         resultSet.getString("author"),
