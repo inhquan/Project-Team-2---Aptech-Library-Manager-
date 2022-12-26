@@ -66,11 +66,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="BookID" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="qlms" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tk" min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="qlms" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -124,7 +120,6 @@
                       <Component id="qltv" min="-2" max="-2" attributes="0"/>
                       <Component id="qlsv" min="-2" max="-2" attributes="0"/>
                       <Component id="qlms" min="-2" max="-2" attributes="0"/>
-                      <Component id="tk" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -359,17 +354,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qlmsActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="java.awt.Button" name="tk">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="0" type="rgb"/>
-            </Property>
-            <Property name="label" type="java.lang.String" value="Th&#x1ed1;ng K&#xea;"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tkActionPerformed"/>
           </Events>
         </Component>
         <Component class="java.awt.Button" name="AddBook">
