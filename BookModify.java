@@ -205,7 +205,9 @@ public class BookModify {
             PreparedStatement statement = null;
             
          try {             
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
+            
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
+            
             String sql ="select * from book where bookName like ?";
             statement = connection.prepareCall(sql);
             statement.setString(1, "%"+bookName+"%");
