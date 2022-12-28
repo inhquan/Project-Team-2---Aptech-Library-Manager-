@@ -432,8 +432,9 @@ public class Quanlymuonsach extends javax.swing.JFrame {
             Borrow borrow = borrowList.get(selectedIndex);
             
             int option =JOptionPane.showConfirmDialog(this,"Do you want to return this item?");
+            System.out.println("option:" + option);
+            
             if(option == 0){
-                System.out.println("Book have return!!");
                 BorrowModify.returnBook(borrow.getborrowId());
                 showBorrow();
             }

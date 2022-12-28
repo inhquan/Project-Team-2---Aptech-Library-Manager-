@@ -163,7 +163,6 @@ public class BorrowModify {
             statement = connection.prepareStatement(sql);
             
             statement = connection.prepareCall(sql);
-            
             statement.setInt(1,borrow.getborrowId());
             statement.setInt(2,borrow.getbookID());
             statement.setInt(3,borrow.getreaderId());
