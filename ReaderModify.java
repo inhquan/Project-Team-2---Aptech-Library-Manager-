@@ -30,7 +30,7 @@ public class ReaderModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="select * from book";
+            String sql ="select * from reader";
             statement = connection.createStatement();
             
             
@@ -39,8 +39,7 @@ public class ReaderModify {
             
             while(resultSet.next()){
                 Reader reader= new Reader(
-                        resultSet.getInt("readerId"),
-                        resultSet.getString("surname"),
+                        resultSet.getInt("readerid"),
                         resultSet.getString("name"), 
                         resultSet.getString("identityCard"),
                         resultSet.getString("phoneNo"),
@@ -80,16 +79,15 @@ public class ReaderModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="insert into borrow(readerId,surname,name,identityCard,phoneNo,cardIssueDate,job) value(?,?,?,?,?,?,?)";
+            String sql ="insert into reader(readerid,surname,identityCard,phoneNo,cardIssueDate,job) value(?,?,?,?,?,?)";
             statement = connection.prepareCall(sql);
             
             statement.setInt(1,reader.getReaderId());
-            statement.setString(2,reader.getSurname());
-            statement.setString(3,reader.getName());
-            statement.setString(4,reader.getIdentityCard());
-            statement.setString(5,reader.getPhoneNo());
-            statement.setString(6,reader.getCardIssueDate());
-            statement.setString(7,reader.getJob());
+            statement.setString(2,reader.getname());
+            statement.setString(3,reader.getIdentityCard());
+            statement.setString(4,reader.getPhoneNo());
+            statement.setString(5,reader.getCardIssueDate());
+            statement.setString(6,reader.getJob());
             
             
             statement.execute();
@@ -122,16 +120,15 @@ public class ReaderModify {
             //lấy tất cả danh sách
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_c2109i", "root", "");
             //query
-            String sql ="update book set BorrowID=?,BookId=?,ReaderId=?,BorrowNo=?,BorrowDate=?,BookReturnAppointmentDate=?,BookReturnDate=?,Status=?";
+            String sql ="update book set readerId=?,surName=?,=?,identityCard=?,phoneNo=?,cardIssueDate=?,job=?,";
             statement = connection.prepareCall(sql);
             
             statement.setInt(1,reader.getReaderId());
-            statement.setString(2,reader.getSurname());
-            statement.setString(3,reader.getName());
-            statement.setString(4,reader.getIdentityCard());
-            statement.setString(5,reader.getPhoneNo());
-            statement.setString(6,reader.getCardIssueDate());
-            statement.setString(7,reader.getJob());
+            statement.setString(2,reader.getname());
+            statement.setString(3,reader.getIdentityCard());
+            statement.setString(4,reader.getPhoneNo());
+            statement.setString(5,reader.getCardIssueDate());
+            statement.setString(6,reader.getJob());
             
             statement.execute();
             
@@ -189,5 +186,9 @@ public class ReaderModify {
             }
         }
         //ket thuc
+    }
+
+    static List<Reader> findByReaderId(String input) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

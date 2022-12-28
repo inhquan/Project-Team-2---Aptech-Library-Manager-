@@ -4,6 +4,8 @@
  */
 package javaapplication17;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Acer
@@ -11,7 +13,6 @@ package javaapplication17;
 public class Reader 
 {
 	private int readerId;
-	private String surname;
 	private String name;
 	private String identityCard;
 	private String phoneNo;
@@ -23,17 +24,23 @@ public class Reader
 
 	}
 
-	public Reader(int readerId, String surname, String name, String identityCard, String phoneNo,
+	public Reader(int readerId, String name, String identityCard, String phoneNo,
 			String cardIssueDate, String job)
 	{
-		this.readerId = readerId;
-		this.surname = surname;
+                this.readerId = readerId;
 		this.name = name;
 		this.identityCard = identityCard;
 		this.phoneNo = phoneNo;
 		this.cardIssueDate = cardIssueDate;
 		this.job = job;
 	}
+
+
+
+    Reader(String name, String identityCard, String phoneNo, String cardIssueDate, String job) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 
 	public int getReaderId() 
 	{
@@ -45,22 +52,12 @@ public class Reader
 		this.readerId = readerId;
 	}
 
-	public String getSurname()
-	{
-		return surname;
-	}
-
-	public void setSurname(String surname)
-	{
-		this.surname = surname;
-	}
-
-	public String getName()
+	public String getname()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setname(String name)
 	{
 		this.name = name;
 	}
@@ -106,6 +103,10 @@ public class Reader
 	{
 		this.job = job;
 	}
+
+    void setReaderId(JTextField readerId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 	
 	
 	
